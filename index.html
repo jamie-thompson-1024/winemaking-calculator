@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Brewing Calcuator</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style.css" type="text/css" rel="stylesheet">
+        <script src="./script/script.js" type="module"></script>
+    </head>
+    <body>
+        <main>
+            <h1>Brewing Calcuator</h1>
+            <form>
+                <fieldset>
+                    <legend>Yeast</legend>
+                    <label for="yeast-abv-tolerance">
+                        Max Abv tolerance:
+                        <div class="suffix-wrapper suffix-percent"> 
+                            <input 
+                                id="yeast-abv-tolerance" 
+                                class="yeast-abv-tolerance"
+                                name="yeast-abv-tolerance"
+                                autocomplete="off"
+                                type="text">
+                        </div>
+                    </label>
+                    <label for="yeast-sugar-abv">
+                        Sugar to Abv Ratio: 
+                        <div class="suffix-wrapper suffix-g-L-percent"> 
+                            <input 
+                                id="yeast-sugar-abv" 
+                                class="yeast-sugar-abv"
+                                name="yeast-sugar-abv"
+                                autocomplete="off"
+                                type="text">
+                        </div>
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <legend>Fruit</legend>
+                    <label for="fruit-sugar-conc">
+                        Fruit Sugar Contents: 
+                        <div class="suffix-wrapper suffix-percent"> 
+                            <input 
+                                id="fruit-sugar-conc" 
+                                class="fruit-sugar-conc"
+                                name="fruit-sugar-conc"
+                                autocomplete="off"
+                                type="text">
+                        </div>
+                    </label>
+                    <label for="fruit-water-cont">
+                        Fruit Water Contents: 
+                        <div class="suffix-wrapper suffix-percent"> 
+                            <input 
+                                id="fruit-water-cont" 
+                                class="fruit-water-cont"
+                                name="fruit-water-cont"
+                                autocomplete="off"
+                                type="text">
+                        </div>
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <legend>Quantities</legend>
+                    <label for="added-fruit">
+                        Added Fruit: 
+                        <div class="suffix-wrapper suffix-grams"> 
+                            <input 
+                                id="added-fruit" 
+                                class="added-fruit"
+                                name="added-fruit"
+                                autocomplete="off"
+                                type="text">
+                        </div>
+                    </label>
+                    <label for="added-sugar">
+                        Added Sugar: 
+                        <div class="suffix-wrapper suffix-grams"> 
+                            <input 
+                                id="added-sugar" 
+                                class="added-sugar"
+                                name="added-sugar"
+                                autocomplete="off"
+                                type="text">
+                        </div>
+                    </label>
+                    <label for="added-water">
+                        Added Water: 
+                        <div class="suffix-wrapper suffix-liters"> 
+                            <input 
+                                id="added-water" 
+                                class="added-water"
+                                name="added-water"
+                                autocomplete="off"
+                                type="text">
+                        </div>
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <legend>Results</legend>
+                    <label for="resultant-volume">
+                        Total Volume: 
+                        <output
+                            id="resultant-volume"
+                            name="resultant-volume"
+                            class="resultant-volume suffix-wrapper suffix-liters">
+                            ~
+                        </output>
+                    </label>
+                    <label for="resultant-abv">
+                        Alcohol by Volume:
+                        <output
+                            id="resultant-abv"
+                            name="resultant-abv"
+                            class="resultant-abv suffix-wrapper suffix-percent">
+                            ~
+                        </output>
+                    </label>
+                    <label for="resultant-sugar-total">
+                        Total Residual Sugar:
+                        <output
+                            id="resultant-sugar-total"
+                            name="resultant-sugar-total"
+                            class="resultant-sugar-total suffix-wrapper suffix-grams">
+                            ~
+                        </output>
+                    </label>
+                    <label for="resultant-sugar-conc">
+                        Residual Sugar Conc:
+                        <output
+                            id="resultant-sugar-conc"
+                            name="resultant-sugar-conc"
+                            class="resultant-sugar-conc suffix-wrapper suffix-g-L">
+                            ~
+                        </output>
+                    </label>
+                </fieldset>
+            </form>
+        </main>
+    </body>
+</html>
