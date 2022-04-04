@@ -1,12 +1,11 @@
 
-import Brew from "./Brew.js";
+import Wine from "./Wine.js";
 import Input from "./Input.js";
 import Output from "./Output.js";
 import { yeastPresets, fruitPresets } from "./Presets.js";
 import SelectInput from "./SelectInput.js";
 
-const brew = new Brew();
-console.log(brew);
+const wine = new Wine();
 
 // Results
 let resultantVolume = new Output('.resultant-volume');
@@ -14,15 +13,15 @@ let resultantAbv = new Output('.resultant-abv');
 let resultantSugar = new Output('.resultant-sugar-total');
 let resulantSugarConc = new Output('.resultant-sugar-conc');
 
-brew.addEventListener('updateResults', updateOutputs);
+wine.addEventListener('updateResults', updateOutputs);
 
 function updateOutputs() {
-    let resAbv_percent = brew.resultantAbv_vv * 100;
+    let resAbv_percent = wine.resultantAbv_vv * 100;
 
-    resultantVolume.setValue(brew.resultantVolume_L);
+    resultantVolume.setValue(wine.resultantVolume_L);
     resultantAbv.setValue(isNaN(resAbv_percent) ? undefined : resAbv_percent);
-    resultantSugar.setValue(brew.resultantSugar_g);
-    resulantSugarConc.setValue(brew.resultantSugarConc_gL);
+    resultantSugar.setValue(wine.resultantSugar_g);
+    resulantSugarConc.setValue(wine.resultantSugarConc_gL);
 }
 
 // Yeast
@@ -32,13 +31,13 @@ let yeastSugarToAbv = new Input('.yeast-sugar-abv', 0);
 yeastMaxAbv.addEventListener('change', updateYeast);
 yeastSugarToAbv.addEventListener('change', updateYeast);
 
-yeastSugarToAbv.setValue(brew.yeastSugarToAlcRatio_gL_vv);
+yeastSugarToAbv.setValue(wine.yeastSugarToAlcRatio_gL_vv);
 
 let yeastPreset = new SelectInput('.yeast-preset', yeastPresets, 'High tolerance');
 yeastPreset.addEventListener('change', () => {
     let yeast = yeastPreset.getValue();
     yeastMaxAbv.setValue(yeast['tolerance']);
-    brew.setYeast(
+    wine.setYeast(
         parseFloat(yeastMaxAbv.value) / 100,
         parseFloat(yeastSugarToAbv.value)
     );
@@ -46,7 +45,7 @@ yeastPreset.addEventListener('change', () => {
 yeastPreset.change();
 
 function updateYeast() {
-    brew.setYeast(
+    wine.setYeast(
         parseFloat(yeastMaxAbv.value) / 100,
         parseFloat(yeastSugarToAbv.value)
     );
@@ -65,7 +64,7 @@ fruitPreset.addEventListener('change', () => {
     let fruit = fruitPreset.getValue();
     fruitSugarConc.setValue(fruit['sugarContents']);
     fruitWaterContents.setValue(fruit['waterContents']);
-    brew.setFruit(
+    wine.setFruit(
         parseFloat(fruitSugarConc.value) / 100,
         parseFloat(fruitWaterContents.value) / 100
     );
@@ -73,7 +72,7 @@ fruitPreset.addEventListener('change', () => {
 fruitPreset.change();
 
 function updateFruit() {
-    brew.setFruit(
+    wine.setFruit(
         parseFloat(fruitSugarConc.value) / 100,
         parseFloat(fruitWaterContents.value) / 100
     );
@@ -92,7 +91,7 @@ addedWater.addEventListener('change', updateQuantities);
 updateQuantities();
 
 function updateQuantities() {
-    brew.setQuantities(
+    wine.setQuantities(
         parseFloat(addedFruit.value),
         parseFloat(addedWater.value),
         parseFloat(addedSugar.value)

@@ -1,15 +1,15 @@
 
-class Brew extends EventTarget{
+class Wine extends EventTarget{
     static default_sugarToAlc_gL_vv = 16.5;
     static default_yeastAbvMax_vv = 0.13;
     static default_fruitSugar_gg = 0.1;
     static default_fruitWaterContents_mL_g = 0.85;
 
-    yeastSugarToAlcRatio_gL_vv = Brew.default_sugarToAlc_gL_vv;
-    yeastAbvMax_vv = Brew.default_yeastAbvMax_vv;
+    yeastSugarToAlcRatio_gL_vv = Wine.default_sugarToAlc_gL_vv;
+    yeastAbvMax_vv = Wine.default_yeastAbvMax_vv;
 
-    fruitSugarConcentration_gg = Brew.default_fruitSugar_gg;
-    fruitWaterContents_mL_g = Brew.default_fruitWaterContents_mL_g;
+    fruitSugarConcentration_gg = Wine.default_fruitSugar_gg;
+    fruitWaterContents_mL_g = Wine.default_fruitWaterContents_mL_g;
     
     addedFruit_g;
     addedWater_L;
@@ -21,8 +21,8 @@ class Brew extends EventTarget{
     resultantSugarConc_gL;
 
     setYeast(
-        abvMax_vv= Brew.default_yeastAbvMax_vv, 
-        sugarToAlc_gL_vv = Brew.default_sugarToAlc_gL_vv)
+        abvMax_vv= Wine.default_yeastAbvMax_vv, 
+        sugarToAlc_gL_vv = Wine.default_sugarToAlc_gL_vv)
     {
         this.yeastAbvMax_vv = abvMax_vv;
         this.yeastSugarToAlcRatio_gL_vv = sugarToAlc_gL_vv;
@@ -31,8 +31,8 @@ class Brew extends EventTarget{
     }
 
     setFruit(
-        sugarConcentration_gg = Brew.default_fruitSugar_gg, 
-        waterContents_mL_g = Brew.default_fruitWaterContents_mL_g) 
+        sugarConcentration_gg = Wine.default_fruitSugar_gg, 
+        waterContents_mL_g = Wine.default_fruitWaterContents_mL_g) 
     {
         this.fruitSugarConcentration_gg = sugarConcentration_gg;
         this.fruitWaterContents_mL_g = waterContents_mL_g;
@@ -87,4 +87,4 @@ class Brew extends EventTarget{
 
 }
 
-export default Brew;
+export default Wine;
