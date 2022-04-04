@@ -1,32 +1,43 @@
 
 const yeastPresets = {
+    "Custom": {
+        tolerance: undefined,
+    },
     "Low tolerance": {
-        tolerance: 0.07,
+        tolerance: 7,
     },
     "Medium tolerance": {
-        tolerance: 0.12,
+        tolerance: 12,
     },
     "High tolerance": {
-        tolerance: 0.18,
+        tolerance: 18,
     }
 };
 
 const fruitPresets = {
+    "Custom": {
+        waterContents: undefined,
+        sugarContents: undefined,
+    },
     "Apple": {
-        waterContents: 0.85,
-        sugarContents: 0.10,
+        waterContents: 85,
+        sugarContents: 10,
     },
     "Grape": {
-        waterContents: 0.81,
-        sugarContents: 0.16,
+        waterContents: 81,
+        sugarContents: 16,
     },
     "Peach": {
-        waterContents: 0.89,
-        sugarContents: 0.09,
+        waterContents: 89,
+        sugarContents: 9,
     },
     "Blackcurrant": {
-        waterContents: 0.82,
-        sugarContents: 0.15,
+        waterContents: 82,
+        sugarContents: 15,
+    },
+    "Carrot": {
+        waterContents: 90,
+        sugarContents: 5,
     }
 };
 

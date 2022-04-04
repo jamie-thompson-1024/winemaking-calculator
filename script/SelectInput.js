@@ -42,6 +42,11 @@ class SelectInput extends EventTarget {
 
     setOption(name) {
         this.selected = name;
+        this.optionElements.forEach(selectEl => {
+            selectEl.forEach(optionEl => {
+                optionEl.selected = optionEl.value === this.selected;
+            })
+        })
     }
 
     getValue() {

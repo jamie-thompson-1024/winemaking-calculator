@@ -129,7 +129,7 @@ main {
 
     font-size: inherit;
 
-    transition: 500ms ease-in-out;
+    transition: 250ms ease-in-out;
 }
 
 #brewingCalculator input:hover,

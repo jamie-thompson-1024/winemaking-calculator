@@ -38,6 +38,9 @@ class Input extends EventTarget{
     }
 
     setValue(value) {
+        if(value === undefined)
+            return;
+
         value = value.toString();
         this.value = value.replaceAll(/[^0-9\-,.]/g, '').replaceAll(',', '.');
 

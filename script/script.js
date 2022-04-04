@@ -34,20 +34,24 @@ yeastSugarToAbv.addEventListener('change', updateYeast);
 
 yeastSugarToAbv.setValue(brew.yeastSugarToAlcRatio_gL_vv);
 
+let yeastPreset = new SelectInput('.yeast-preset', yeastPresets, 'High tolerance');
+yeastPreset.addEventListener('change', () => {
+    let yeast = yeastPreset.getValue();
+    yeastMaxAbv.setValue(yeast['tolerance']);
+    brew.setYeast(
+        parseFloat(yeastMaxAbv.value) / 100,
+        parseFloat(yeastSugarToAbv.value)
+    );
+});
+yeastPreset.change();
+
 function updateYeast() {
     brew.setYeast(
         parseFloat(yeastMaxAbv.value) / 100,
         parseFloat(yeastSugarToAbv.value)
     );
+    yeastPreset.setOption('Custom');
 }
-
-let yeastPreset = new SelectInput('.yeast-preset', yeastPresets, 'High tolerance');
-yeastPreset.addEventListener('change', () => {
-    let yeast = yeastPreset.getValue();
-    yeastMaxAbv.setValue(yeast['tolerance']);
-    yeastMaxAbv.change();
-});
-yeastPreset.change();
 
 // Fruit
 let fruitSugarConc = new Input('.fruit-sugar-conc', 0, 100);
@@ -56,22 +60,25 @@ let fruitWaterContents = new Input('.fruit-water-cont', 0, 100);
 fruitSugarConc.addEventListener('change', updateFruit);
 fruitWaterContents.addEventListener('change', updateFruit);
 
+let fruitPreset = new SelectInput('.fruit-preset', fruitPresets, 'Apple');
+fruitPreset.addEventListener('change', () => {
+    let fruit = fruitPreset.getValue();
+    fruitSugarConc.setValue(fruit['sugarContents']);
+    fruitWaterContents.setValue(fruit['waterContents']);
+    brew.setFruit(
+        parseFloat(fruitSugarConc.value) / 100,
+        parseFloat(fruitWaterContents.value) / 100
+    );
+});
+fruitPreset.change();
+
 function updateFruit() {
     brew.setFruit(
         parseFloat(fruitSugarConc.value) / 100,
         parseFloat(fruitWaterContents.value) / 100
     );
+    fruitPreset.setOption('Custom');
 }
-
-let fruitPreset = new SelectInput('.fruit-preset', fruitPresets, 'Apple');
-fruitPreset.addEventListener('change', () => {
-    let fruit = fruitPreset.getValue();
-    fruitSugarConc.setValue(fruit['waterContents']);
-    fruitSugarConc.change();
-    fruitWaterContents.setValue(fruit['sugarContents']);
-    fruitWaterContents.change();
-});
-fruitPreset.change();
 
 // Quantities
 let addedFruit = new Input('.added-fruit', 0);
