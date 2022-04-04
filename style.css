@@ -72,7 +72,7 @@ main {
     place-items: center stretch;
 }
 
-#brewingCalculator {
+#winemakingCalculator {
     display: grid;
     grid-auto-flow: row;
     gap: 0.4rem;
@@ -82,7 +82,7 @@ main {
     background-color: var(--theme-foreground);
 }
 
-#brewingCalculator fieldset {
+#winemakingCalculator fieldset {
     border: 2px solid;
 
     font-size: 1.5rem;
@@ -92,7 +92,7 @@ main {
     gap: 0.7rem;
 }
 
-#brewingCalculator fieldset > legend {
+#winemakingCalculator fieldset > legend {
     padding: 0 0.6em;
 }
 
@@ -101,23 +101,23 @@ main {
     opacity: 0.8;
 }
 
-#brewingCalculator .reduced-gap {
+#winemakingCalculator .reduced-gap {
     gap: 0.2rem;
 }
 
-#brewingCalculator label {
+#winemakingCalculator label {
     display: grid;
     place-items: stretch start;
     gap: 0.4rem;
 }
 
-#brewingCalculator option {
+#winemakingCalculator option {
     background-color: var(--theme-foreground-focus);
 }
 
-#brewingCalculator input,
-#brewingCalculator output,
-#brewingCalculator select {
+#winemakingCalculator input,
+#winemakingCalculator output,
+#winemakingCalculator select {
     display: block;
     width: 100%;
 
@@ -132,13 +132,13 @@ main {
     transition: 250ms ease-in-out;
 }
 
-#brewingCalculator input:hover,
-#brewingCalculator select:hover {
+#winemakingCalculator input:hover,
+#winemakingCalculator select:hover {
     background-color: var(--theme-foreground-hover);
 }
 
-#brewingCalculator input:focus,
-#brewingCalculator select:focus {
+#winemakingCalculator input:focus,
+#winemakingCalculator select:focus {
     background-color: var(--theme-foreground-focus);
     border-bottom: 2px solid;
 }
