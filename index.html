@@ -9,10 +9,21 @@
     </head>
     <body>
         <main>
-            <h1>Brewing Calcuator</h1>
-            <form>
+            <h1 id="calcHeading">Brewing Calcuator</h1>
+            <form id="brewingCalculator">
                 <fieldset>
                     <legend>Yeast</legend>
+                    <label class="reduced-gap" for="yeast-preset">
+                        Presets:
+                        <p class="preset-note">
+                            * These are approximate figures, and not accurate to all varieties of yeast
+                        </p>
+                        <select
+                            id="yeast-preset"
+                            class="yeast-preset"
+                            name="yeast-preset">
+                        </select>
+                    </label>
                     <label for="yeast-abv-tolerance">
                         Max Abv tolerance:
                         <div class="suffix-wrapper suffix-percent"> 
@@ -38,6 +49,17 @@
                 </fieldset>
                 <fieldset>
                     <legend>Fruit</legend>
+                    <label class="reduced-gap" for="fruit-preset">
+                        Presets:
+                        <p class="preset-note">
+                            * These are approximate figures, and not accurate to all varieties of the given fruit
+                        </p>
+                        <select 
+                            id="fruit-preset"
+                            class="fruit-preset"
+                            name="fruit-preset">
+                        </select>
+                    </label>
                     <label for="fruit-sugar-conc">
                         Fruit Sugar Contents: 
                         <div class="suffix-wrapper suffix-percent"> 
